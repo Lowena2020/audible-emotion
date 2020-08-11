@@ -39,7 +39,7 @@ print("connecting")
 client.connect(server, port)
 print("done")
 
-topic = "lowena"
+topic = "music"
 
 logger = logging.getLogger(__name__)
 
@@ -315,8 +315,8 @@ def joy_detector(num_frames, preview_alpha, image_format, image_folder,
 
         def stop_playing():
             client.loop_start()
-            client.subscribe("lowena")
-            client.publish("lowena", "stop")
+            client.subscribe("music")
+            client.publish("music", "stop")
             client.loop_stop()
             print("Sent stopping signal.")
             
