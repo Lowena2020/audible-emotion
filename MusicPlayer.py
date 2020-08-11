@@ -11,22 +11,6 @@
 # [https://github.com/google/aiyprojects-raspbian/blob/aiyprojects/src/examples/vision/joy/joy_detection_demo.py]
 # ---------------------------
 
-# ????
-
-#Copyright [yyyy] [name of copyright owner]
-#
-#Licensed under the Apache License, Version 2.0 (the "License");
-#you may not use this file except in compliance with the License.
-#You may obtain a copy of the License at
-#
-#    http://www.apache.org/licenses/LICENSE-2.0
-#
-#Unless required by applicable law or agreed to in writing, software
-#distributed under the License is distributed on an "AS IS" BASIS,
-#WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-#See the License for the specific language governing permissions and
-#limitations under the License.
-
 
 # Import libraries
 
@@ -67,11 +51,11 @@ port = 1883
 # Keep SCOPE as is
 # CLIENT_ID, CLIENT_SECRET and REDIRECT_URI can be found from your spotify for developers account.
 
-USERNAME = "lainfromthewired"
+USERNAME = ""
 SCOPE = "playlist-modify-public playlist-modify-private user-read-playback-state user-modify-playback-state user-top-read"
-CLIENT_ID = "1e2d366ffcef498998b24991fc159f1c"
-CLIENT_SECRET = "30d53bc4533e4587885243f8792aeb13"
-REDIRECT_URI = "https://www.google.com/"
+CLIENT_ID = ""
+CLIENT_SECRET = ""
+REDIRECT_URI = ""
 
 keep_playing = True
 
@@ -242,7 +226,7 @@ def receive_joy_values(device_found, playlist_id, df, device_id):
     client.on_message = message_received
 
     client.connect(server, port)
-    client.subscribe("lowena", qos=1)
+    client.subscribe("music", qos=1)
     #client.loop_forever()
     
     if device_found == True:
