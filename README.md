@@ -14,8 +14,28 @@ There are 4 python (.py) files, one .h5 model and one .csv file associated with 
 - songdataframewithlabel.csv (created when GenerateDataframe.py and ApplyModelToDataframe.py are run)
 - best-model.h5 (a classifier model to determine whether a song is energetic or chill based on its audio features like timbre, loudness, valence etc)
 
+GenerateDataframe.py creates the song dataframe (.csv file) from the user's Spotify listening data.
+ApplyModelToDataframe.py applied the classifier model (best-model.h5) to the dataframe. These three files need to be kept & run in the same location.
+TransmitJoy.py sends joy_score values from the AIY Vision Kit to the server.
+MusicPlayer.py gets joy_score values from the server, calculates mood then picks a song from the dataframe to play.
 
-This is the list of module requirements on the Raspberry Pi.
+
+Requirements
+
+The two .py files below can be run either from a computer (then copy across the created .csv file) or on the Pi.
+
+This is the list of module requirements for the GenerateDataframe.py file:
+- pandas
+- spotipy
+
+This is the list of module requirements for the ApplyModelToDataframe.py file:
+- tensorflow
+- tensorflow.keras.models
+- tensorflow.keras.models
+- sklearn.preprocessing
+- pandas
+
+This is the list of module requirements for the Raspberry Pi.
 - pandas
 - spotipy
 - numpy
@@ -28,16 +48,6 @@ This is the list of module requirements on the Raspberry Pi.
 This is the list of module requirements for the Vision Kit:
 - paho.mqtt.client
 
-This is the list of module requirements for the GenerateDataframe.py file:
-- pandas
-- spotipy
-
-This is the list of module requirements for the ApplyModelToDataframe.py file:
-- tensorflow
-- tensorflow.keras.models
-- tensorflow.keras.models
-- sklearn.preprocessing
-- pandas
 
 This is a list of instructions on how to set up the project.
 
@@ -59,7 +69,7 @@ The TransmitJoy.py must be running before the MusicPlayer.py is run.
 The MusicPlayer.py file choses songs to play (or add to a playlist if there is no available device to play songs on) based on mood detected.
 
 
-A note on authetication:
+A note on authentication:
 Because the files are accessing user's data, the user is required to log in for authetication. When the .py files are run, the user will be directed to a website (the redirect uri). 
 For example, my redirect was google.com so I was redirected there. It will ask you to log into your Spotify Account- this is so it can give access to your (the user's) listening data.
 Log in then copy the url of the website it redirects you to into the python shell and press enter.
