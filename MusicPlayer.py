@@ -1,5 +1,3 @@
-# Collated python file
-# up to date as of 10/07/2020
 # By Lowena Hull
 
 
