@@ -368,7 +368,7 @@ def switch_to_raspberry():
         
         for device in device_ids:
             if device['name'] == "raspotify (raspberrypi)":
-                print("Raspberry Pi output found")
+                #print("Raspberry Pi output found")
                 device_found = True
                 return device['id'], device_found
 
@@ -410,7 +410,7 @@ def filter_songs(df, mood="happy"):
         temp_df = remove_lack_genre(df, genre)
         if not temp_df.empty:
             new_df = pd.concat([new_df, temp_df], copy= False, sort=False)
-            new_df = new_df.drop_duplicates(subset="id", keep="first", inplace=False) # changed inplace = True
+            new_df = new_df.drop_duplicates(subset="id", keep="first", inplace=False)
 
     return new_df
 
