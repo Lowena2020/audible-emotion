@@ -25,11 +25,11 @@ from tensorflow.keras.models import load_model
 from sklearn.preprocessing import StandardScaler
 
 # %%
-username = "lainfromthewired"
+username = ""
 scope = "playlist-modify-public playlist-modify-private user-read-playback-state user-modify-playback-state ugc-image-upload user-top-read"
-client_id = "1e2d366ffcef498998b24991fc159f1c"
-client_secret = "30d53bc4533e4587885243f8792aeb13"
-redirect_uri = "https://www.google.com/"
+client_id = ""
+client_secret = ""
+redirect_uri = ""
 
 # %%
 # Create class instance
